@@ -9,46 +9,62 @@
 </head>
 
 <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">Portofolio</a>
+
+            <div class="burger" id="burger">
+                ☰
+            </div>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#tentang">Tentang</a></li>
+                <li><a href="#proyek">Proyek</a></li>
+                <li><a href="#keahlian">Keahlian</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+                <li><button class="btn" id="vip-btn">VIP</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
     <header>
         <h1>FAIZ ATHAYA RAMADHAN</h1>
         <p>Frontend Developer, Mobile Developer, UI/UX Designer, Graphic Designer</p>
     </header>
 
     <div class="container">
-        <h2>Tentang Saya</h2>
+        <!-- Tentang Saya -->
+        <h2 id="tentang">Tentang Saya</h2>
         <section class="profile">
             <img src="@dnshot_-00533.jpg" alt="Foto Profil">
             <div>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
-                dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
-                book. It has survived not only five centuries</p>
+                <p>Lorem Ipsum is simply dummy text...</p>
             </div>
         </section>
 
-        <section>
+        <!-- Proyek -->
+        <section id="proyek">
             <h2>Proyek Terbaru</h2>
             <div class="grid">
                 <div class="card">
                     <h3>Proyek 1</h3>
-                    <p>DLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
-                    dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
-                    book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially
-                    unchanged. It was popularised i.</p>
+                    <p>Lorem Ipsum...</p>
                 </div>
                 <div class="card">
                     <h3>Proyek 2</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
-                    dummy </p>
+                    <p>Lorem Ipsum...</p>
                 </div>
                 <div class="card">
                     <h3>Proyek 3</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
-                    dummy text ever .</p>
+                    <p>Lorem Ipsum...</p>
                 </div>
             </div>
         </section>
 
-        <section>
+        <!-- Keahlian -->
+        <section id="keahlian">
             <h2>Keahlian</h2>
             <div class="skills">
                 <div class="skill-card">HTML</div>
@@ -60,8 +76,14 @@
         </section>
     </div>
 
-    <footer>
+    <!-- Footer -->
+    <footer id="kontak">
         <p>Hubungi saya di: faizathayaramadhan@gmail.com | © 2025 faiz A</p>
     </footer>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+
 </body>
+
 </html>
