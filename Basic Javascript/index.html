@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Test JS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="p-10">
+    <select id="functionSelector" class="mb-4 p-2 border rounded">
+        <option value="ganjil">Hitung Ganjil</option>
+        <option value="kabisat">Tahun Kabisat</option>
+        <option value="faktorial">Faktorial</option>
+        <option value="prima">Bilangan Prima</option>
+    </select>
+
+    <input type="number" id="inputValue" class="mb-4 p-2 border rounded w-full" placeholder="Masukkan angka" />
+    <button onclick="jalankanFungsi()" class="bg-blue-500 text-white px-4 py-2 rounded">Jalankan</button>
+    <div id="output" class="mt-4 p-2 bg-gray-100 rounded"></div>
+
+    <script src="basicJs.js"></script>
+</body>
+
+</html>

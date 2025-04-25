@@ -3,9 +3,8 @@ const axios = require('axios');
 const cors = require('cors');
 
 const app = express();
-const port = 3001; // Ganti dengan port yang diinginkan, misalnya 3001
+const port = 3001;
 
-// Menambahkan middleware CORS
 app.use(cors());
 
 app.get('/api/pokemon/:name', async (req, res) => {
@@ -15,7 +14,7 @@ app.get('/api/pokemon/:name', async (req, res) => {
   try {
     const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`);
     console.log("Data received from PokeAPI:", response.data);
-    res.json(response.data);  // Kirimkan data sebagai JSON
+    res.json(response.data);
   } catch (error) {
     console.error(`[ERROR] Fetching ${name}:`, error.message);
     res.status(500).json({ message: 'Failed to fetch Pokémon data' });
@@ -23,5 +22,6 @@ app.get('/api/pokemon/:name', async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`✅ Backend running on http://localhost:${port}`);
+  console.log(`Backend running on http://localhost:${port}`);
 });
+
