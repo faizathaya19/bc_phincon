@@ -1,5 +1,5 @@
 /dist
 .env
-/*/
-!/ReviewFeature
 !/ReviewFeature/**
+/node_modules
+package-lock.json
