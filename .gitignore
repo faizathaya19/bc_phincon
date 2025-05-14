@@ -1,5 +1,5 @@
 # Ignore dist and .env
-dist/
+dist
 .env
 
 # Ignore everything else
