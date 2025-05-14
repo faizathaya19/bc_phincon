@@ -49,6 +49,8 @@ export const getTypeByIdService = async (type: string, id: string) => {
       {
         model: Review,
         as: 'reviews',
+        separate: true,
+        order: [['createdAt', 'DESC']],
         include: [
           {
             model: User,
@@ -68,12 +70,14 @@ export const getAllByTypeService = async (type: string) => {
 }
 
 export const getAllReviewsByTypeService = async (type: string) => {
-const typeModel: any = typeModels(type)
+  const typeModel: any = typeModels(type)
   return await typeModel.findAll({
     include: [
       {
         model: Review,
         as: 'reviews',
+        separate: true,
+        order: [['createdAt', 'DESC']],
         include: [
           {
             model: User,
@@ -131,7 +135,11 @@ export const createReviewService = async (
       imageUrl = result.secure_url
       await fs.unlink(tempFilePath)
     } catch (err) {
-      if (tempFilePath) await fs.unlink(tempFilePath).catch(() => {})
+      console.error('Error during image upload:', err)
+      if (tempFilePath)
+        await fs.unlink(tempFilePath).catch((unlinkErr) => {
+          console.error('Error during temporary file cleanup:', unlinkErr)
+        })
       throw new Error('Image upload failed')
     }
   }
