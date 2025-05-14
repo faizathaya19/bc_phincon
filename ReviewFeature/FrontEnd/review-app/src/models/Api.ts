@@ -19,7 +19,7 @@ export const getDetail = async (
   id: string,
   type: Type
 ): Promise<TypeModels> => {
-  const res = await axios.get(`${baseUrl}/${type}/${id}`)
+  const res = await axios.get(`${baseUrl}/d/${type}/${id}`)
   return res.data.data
 }
 

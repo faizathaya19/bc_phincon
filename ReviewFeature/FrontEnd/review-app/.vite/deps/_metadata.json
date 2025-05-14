@@ -2,7 +2,54 @@
   "hash": "9c8f79bc",
   "configHash": "053e2123",
   "lockfileHash": "6a50c0d6",
-  "browserHash": "9e1b351d",
-  "optimized": {},
-  "chunks": {}
+  "browserHash": "a2157608",
+  "optimized": {
+    "react/jsx-dev-runtime": {
+      "src": "../../node_modules/react/jsx-dev-runtime.js",
+      "file": "react_jsx-dev-runtime.js",
+      "fileHash": "5f984676",
+      "needsInterop": true
+    },
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "3621a096",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "d817ac25",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.mjs",
+      "file": "react-router-dom.js",
+      "fileHash": "8dd9de16",
+      "needsInterop": false
+    },
+    "axios": {
+      "src": "../../node_modules/axios/index.js",
+      "file": "axios.js",
+      "fileHash": "e0d81a54",
+      "needsInterop": false
+    },
+    "@heroicons/react/24/solid": {
+      "src": "../../node_modules/@heroicons/react/24/solid/esm/index.js",
+      "file": "@heroicons_react_24_solid.js",
+      "fileHash": "09dc5e20",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-OAZAAUMI": {
+      "file": "chunk-OAZAAUMI.js"
+    },
+    "chunk-6GAV2S6I": {
+      "file": "chunk-6GAV2S6I.js"
+    },
+    "chunk-DC5AMYBS": {
+      "file": "chunk-DC5AMYBS.js"
+    }
+  }
 }
