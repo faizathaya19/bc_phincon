@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { getDetail, getDetailfilter } from '../models/Api'
+import { getDetail, getDetailfilter } from '../services/review.service'
 import type { Course } from '../types/Course'
 import type { Tryout } from '../types/Tryout'
 import type { App } from '../types/App'
@@ -176,7 +176,7 @@ const DetailPage: React.FC = () => {
                   <img
                     src={review.image}
                     alt="ulasan"
-                    className="w-full max-w-xs h-auto object-cover rounded-md mb-2"
+                    className="w-full max-w-[300px] max-h-[200px] object-cover rounded-md mb-2"
                   />
                 )}
 

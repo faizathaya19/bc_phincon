@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import MainLayout from './layouts/MainLayout'
 import Home from './pages/HomePage'
-import TabPage from './pages/TabPage'
-import DetailPage from './pages/DetailPage'
+import TabPage from './features/reviewFeature/pages/TabPage'
+import DetailPage from './features/reviewFeature/pages/DetailPage'
 
 export default function App() {
   return (

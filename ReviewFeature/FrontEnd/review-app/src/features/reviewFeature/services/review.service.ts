@@ -51,6 +51,6 @@ export const getDetailfilter = async (
   const url = `${baseUrl}/f/${type}/${id}${
     queryString ? `?${queryString}` : ''
   }`
-  const res = await await axios.get(url)
+  const res = await axios.get(url)
   return res.data.data
 }

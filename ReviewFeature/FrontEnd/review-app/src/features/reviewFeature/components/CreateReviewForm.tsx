@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { StarIcon, PaperClipIcon, PhotoIcon } from '@heroicons/react/24/solid'
-import { createReview } from '../models/Api'
+import { createReview } from '../services/review.service'
 
 interface CreateReviewPageProps {
   userId: string
@@ -57,7 +57,10 @@ const CreateReviewPage: React.FC<CreateReviewPageProps> = ({
 
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
-          <label htmlFor="rating" className="block text-sm font-medium text-gray-700 mb-2">
+          <label
+            htmlFor="rating"
+            className="block text-sm font-medium text-gray-700 mb-2"
+          >
             Rating
           </label>
           <div id="rating" className="flex items-center space-x-1">
