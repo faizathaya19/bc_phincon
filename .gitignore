@@ -1,7 +1,5 @@
 .env
 dist/
 
-# Tapi jangan abaikan folder project/
 !ReviewFeature/
-# Jangan abaikan semua isi dalam folder project/
 !ReviewFeature/**
