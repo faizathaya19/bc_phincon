@@ -1,5 +1,5 @@
 import axios from 'axios'
-import type { App } from '../types/app'
+import type { App } from '../types/App'
 import type { Course } from '../types/Course'
 import type { Tryout } from '../types/Tryout'
 

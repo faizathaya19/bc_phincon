@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
-import { fetchType } from '../models/api'
+import { fetchType } from '../models/Api'
 import { Link } from 'react-router-dom'
 
 import Card from '../components/Card'
 
 import type { Course } from '../types/Course'
 import type { Tryout } from '../types/Tryout'
-import type { App } from '../types/app'
+import type { App } from '../types/App'
 
 export default function TabsPage() {
   const [tab, setTab] = useState<'course' | 'tryout-section' | 'app'>('course')

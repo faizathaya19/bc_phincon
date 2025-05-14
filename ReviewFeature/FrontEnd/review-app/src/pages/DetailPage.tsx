@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { getDetail, getDetailfilter } from '../models/api'
+import { getDetail, getDetailfilter } from '../models/Api'
 import type { Course } from '../types/Course'
 import type { Tryout } from '../types/Tryout'
-import type { App } from '../types/app'
+import type { App } from '../types/App'
 import CreateReviewForm from '../components/CreateReviewForm'
 import ReviewFilter from '../components/ReviewFilter'
 
