@@ -1,6 +1,14 @@
+# Ignore node_modules and package-lock.json
 node_modules/
 package-lock.json
+
+# Ignore dist and .env
 /dist
 .env
+
+# Ignore everything else
+/*/
+
+# Allow the 'ReviewFeature' folder to be tracked
 !/ReviewFeature
 !/ReviewFeature/**
