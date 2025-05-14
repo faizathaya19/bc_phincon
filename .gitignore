@@ -1,4 +1,4 @@
-.env
+ReviewFeature/Backend/env
 dist/
 
 !ReviewFeature/
