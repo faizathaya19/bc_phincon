@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { StarIcon, PaperClipIcon, PhotoIcon } from '@heroicons/react/24/solid'
-import { createReview } from '../services/review.service'
+import { createReview } from '../../../services/review.service'
 
 interface CreateReviewPageProps {
   userId: string

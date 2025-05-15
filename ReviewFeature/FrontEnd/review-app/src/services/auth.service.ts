@@ -1,6 +1,10 @@
 import axios from 'axios'
-import type { LoginInput, RegisterInput, AuthResponse } from '../types/auth'
-import type { UserProfile } from '../types/user'
+import type {
+  LoginInput,
+  RegisterInput,
+  AuthResponse,
+} from '../features/authFeature/types/auth'
+import type { UserProfile } from '../features/authFeature/types/user'
 
 const API_URL = 'http://localhost:3001/api/auth'
 

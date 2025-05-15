@@ -1,17 +1,17 @@
 import { Navigate } from 'react-router-dom'
-import { isTokenExpired } from '../utils/isTokenExpired'
+import { useSelector } from 'react-redux'
 import type { JSX } from 'react'
-import { clearAccessToken } from '../features/loginFeature/utils/tokenStorage'
+import { isTokenExpired } from '../utils/isTokenExpired'
+import type { RootState } from '../app/store'
 
 interface PrivateRouteProps {
   children: JSX.Element
 }
 
 const PrivateRoute = ({ children }: PrivateRouteProps) => {
-  const token = localStorage.getItem('accessToken')
+  const token = useSelector((state: RootState) => state.auth.accessToken)
 
   if (!token || isTokenExpired(token)) {
-    clearAccessToken()
     return <Navigate to="/login" replace />
   }
 

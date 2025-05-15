@@ -2,12 +2,13 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
 import './index.css'
-import { ProfileProvider } from './features/loginFeature/contexts/ProfileContext'
+import { Provider } from 'react-redux'
+import { store } from './app/store'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <ProfileProvider>
+    <Provider store={store}>
       <App />
-    </ProfileProvider>
+    </Provider>
   </React.StrictMode>
 )

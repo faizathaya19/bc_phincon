@@ -1,13 +1,14 @@
 import { useState } from 'react'
 import Card from '../components/Card'
-import { useTypes } from '../hooks/useTypes'
-import type { Course } from '../types/Course'
+import type { Course } from '..//types/Course'
 import type { Tryout } from '../types/Tryout'
 import type { App } from '../types/App'
+import { useReview } from '../hooks/useReview'
+import type { TypeReview } from '../types/TypeReview'
 
 export default function TabsPage() {
-  const [tab, setTab] = useState<'course' | 'tryout-section' | 'app'>('course')
-  const { data, loading, error } = useTypes(tab)
+  const [tab, setTab] = useState<TypeReview>('course')
+  const { data, loading, error } = useReview(tab)
 
   const renderCards = () => {
     if (data.length === 0) {

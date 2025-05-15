@@ -1,4 +1,4 @@
-import { useProfile } from '../features/loginFeature/contexts/ProfileContext'
+import { useProfile } from '../features/authFeature/hooks'
 
 export default function Home() {
   const { profile } = useProfile()

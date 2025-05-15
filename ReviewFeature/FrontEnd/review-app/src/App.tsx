@@ -2,14 +2,13 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 import MainLayout from './layouts/MainLayout'
 import Home from './pages/HomePage'
+import PublicRoute from './routes/PublicRoute'
+import AuthPage from './features/authFeature/pages/AuthPage'
+import PrivateRoute from './routes/PrivateRoute'
 import TabPage from './features/reviewFeature/pages/TabPage'
 import DetailPage from './features/reviewFeature/pages/DetailPage'
-import LoginPage from './features/loginFeature/pages/LoginPage'
-import RegisterPage from './features/loginFeature/pages/RegisterPage'
-import PrivateRoute from './routes/PrivateRoute'
-import PublicRoute from './routes/PublicRoute'
-import Chat from './pages/ChatPage'
-import ChatList from './pages/ChatList'
+import ChatRoomListPage from './features/chatFeature/pages/ChatRoomListPage'
+import ChatPage from './features/chatFeature/pages/ChatPage'
 
 export default function App() {
   return (
@@ -20,15 +19,7 @@ export default function App() {
           path="/login"
           element={
             <PublicRoute>
-              <LoginPage />
-            </PublicRoute>
-          }
-        />
-        <Route
-          path="/register"
-          element={
-            <PublicRoute>
-              <RegisterPage />
+              <AuthPage />
             </PublicRoute>
           }
         />
@@ -63,7 +54,7 @@ export default function App() {
             path="/chat/:roomId"
             element={
               <PrivateRoute>
-                <Chat />
+                <ChatPage />
               </PrivateRoute>
             }
           />
@@ -71,7 +62,7 @@ export default function App() {
             path="/listChat"
             element={
               <PrivateRoute>
-                <ChatList />
+                <ChatRoomListPage />
               </PrivateRoute>
             }
           />

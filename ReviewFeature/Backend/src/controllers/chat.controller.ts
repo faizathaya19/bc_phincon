@@ -4,7 +4,7 @@ import { sendResponse } from '../utils/responseUtil'
 
 export const createPrivateRoom = async (req: Request, res: Response) => {
   const { userIds } = req.body
-
+  userIds.push(req.user_data?.id)
   if (!Array.isArray(userIds) || userIds.length !== 2) {
     return sendResponse(res, 400, 'Private chat requires exactly two users')
   }
@@ -20,7 +20,7 @@ export const createPrivateRoom = async (req: Request, res: Response) => {
 
 export const createGroupRoom = async (req: Request, res: Response) => {
   const { userIds, sessionId, groupName } = req.body
-
+  userIds.push(req.user_data?.id)
   if (!Array.isArray(userIds) || userIds.length < 2) {
     return sendResponse(res, 400, 'Group chat requires at least two users')
   }
@@ -35,23 +35,6 @@ export const createGroupRoom = async (req: Request, res: Response) => {
   } catch (err) {
     console.error(err)
     return sendResponse(res, 500, 'Failed to create group room')
-  }
-}
-
-export const sendMessage = async (req: Request, res: Response) => {
-  const { roomId, message } = req.body
-  const userId = req.user_data?.id
-
-  if (!roomId || !message || !userId) {
-    return sendResponse(res, 400, 'roomId, message, and userId are required')
-  }
-
-  try {
-    const result = await chatService.sendMessage(roomId, userId, message)
-    return sendResponse(res, 201, 'Message sent', result)
-  } catch (err) {
-    console.error(err)
-    return sendResponse(res, 500, 'Failed to send message')
   }
 }
 

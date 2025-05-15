@@ -1,20 +1,19 @@
 import { useState } from 'react'
 import type { LoginInput, RegisterInput } from '../types/auth'
-import * as authService from '../services/auth.service'
-import { useProfile } from '../contexts/ProfileContext'
-import { setAccessToken } from '../utils/tokenStorage'
+import * as authService from '../../../services/auth.service'
+import { useAuthToken, useProfile } from '../hooks'
 
 export function useAuth() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const { profile, setProfile } = useProfile()
+  const { token, setAccessToken } = useAuthToken()
 
   const login = async (data: LoginInput) => {
     setLoading(true)
     setError(null)
     try {
       const response = await authService.login(data)
-      localStorage.setItem('accessToken', response.accessToken)
       setAccessToken(response.accessToken)
       const user = await authService.fetchUserProfile(response.accessToken)
       setProfile(user)
@@ -32,7 +31,6 @@ export function useAuth() {
     setError(null)
     try {
       const response = await authService.register(data)
-      localStorage.setItem('accessToken', response.accessToken)
       setAccessToken(response.accessToken)
       const user = await authService.fetchUserProfile(response.accessToken)
       setProfile(user)
@@ -46,13 +44,13 @@ export function useAuth() {
   }
 
   const logout = () => {
-    setAccessToken('')
+    setAccessToken(null)
     setProfile(null)
-    localStorage.removeItem('accessToken')
   }
 
   return {
     profile,
+    token,
     login,
     register,
     logout,

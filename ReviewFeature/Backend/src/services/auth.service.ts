@@ -6,6 +6,7 @@ import config from '../config/configData'
 import User from '../models/Users.model'
 import { generateAccessToken, generateRefreshToken } from '../utils/token'
 import { sendResponse } from '../utils/responseUtil'
+import { Op } from 'sequelize'
 
 declare global {
   namespace Express {
@@ -123,14 +124,18 @@ export const deleteUserService = async (req: Request, res: Response) => {
   }
 }
 export const getAllUsers = async (req: Request, res: Response) => {
-  try {
-    const user = await User.findAll({
-      attributes: ['id', 'fullname'],
-      where: { active: true },
-    })
-    if (!user) return sendResponse(res, 404, 'User not found')
+  const userId = req.user_data.id
 
-    return sendResponse(res, 200, 'Users fetched', user)
+  try {
+    const users = await User.findAll({
+      attributes: ['id', 'fullname'],
+      where: {
+        active: true,
+        id: { [Op.ne]: userId }, // exclude self
+      },
+    })
+
+    return sendResponse(res, 200, 'Users fetched', users)
   } catch (err) {
     console.error('fetch user:', err)
     return sendResponse(res, 500, 'Failed to fetch users')

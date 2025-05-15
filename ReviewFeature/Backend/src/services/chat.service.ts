@@ -117,10 +117,3 @@ export const getMessages = async (roomId: string) => {
     order: [['createdAt', 'ASC']],
   })
 }
-
-export const getAllUsers = async (roomId: string) => {
-  return Message.findAll({
-    where: { roomId, active: 1 },
-    order: [['createdAt', 'ASC']],
-  })
-}

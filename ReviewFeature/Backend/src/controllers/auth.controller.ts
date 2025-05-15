@@ -6,8 +6,6 @@ import {
   registerSchema,
   refreshTokenSchema,
 } from '../validation/validationSchemas'
-import { ParamsDictionary } from 'express-serve-static-core'
-import { ParsedQs } from 'qs'
 
 export const register = async (req: Request, res: Response) => {
   const { error } = registerSchema.validate(req.body)

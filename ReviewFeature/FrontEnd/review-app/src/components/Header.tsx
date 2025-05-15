@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
-import { useAuth } from '../features/loginFeature/hooks/useAuth'
+import { useAuth } from '../features/authFeature/hooks/useAuth'
 
 export default function Header() {
   const [isAdmin] = useState(false)
@@ -13,7 +13,7 @@ export default function Header() {
   }
 
   return (
-    <header className="flex justify-between items-center px-4 py-3 bg-blue-600 text-white">
+    <header className="sticky top-0 flex justify-between items-center px-4 py-3 bg-blue-600 text-white z-10">
       <h1 className="text-xl font-bold">My App</h1>
       <nav className="space-x-4">
         <Link to="/">Home</Link>

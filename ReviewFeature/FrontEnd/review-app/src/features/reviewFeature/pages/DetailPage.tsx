@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { getDetail, getDetailfilter } from '../services/review.service'
+import { getDetail, getDetailfilter } from '../../../services/review.service'
 import type { Course } from '../types/Course'
 import type { Tryout } from '../types/Tryout'
 import type { App } from '../types/App'
 import CreateReviewForm from '../components/CreateReviewForm'
 import ReviewFilter from '../components/ReviewFilter'
-import { useProfile } from '../../loginFeature/contexts/ProfileContext'
+import { useProfile } from '../../authFeature/hooks'
 
 type DetailType = Course | Tryout | App
 
