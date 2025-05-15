@@ -1,15 +1,15 @@
 import axios from 'axios'
-import type { App } from '../types/App'
-import type { Course } from '../types/Course'
-import type { Tryout } from '../types/Tryout'
+import type { App } from '../features/reviewFeature/types/App'
+import type { Course } from '../features/reviewFeature/types/Course'
+import type { Tryout } from '../features/reviewFeature/types/Tryout'
+import type { TypeReview } from '../features/reviewFeature/types/TypeReview'
 
 const baseUrl = 'http://localhost:3001/api'
 
-type Type = 'course' | 'tryout-section' | 'app'
 type TypeModels = Course | Tryout | App
 
 export const fetchType = async (
-  type: Type
+  type: TypeReview
 ): Promise<Course[] | Tryout[] | App[]> => {
   const res = await axios.get(`${baseUrl}/${type}s`)
   return res.data.data
@@ -17,7 +17,7 @@ export const fetchType = async (
 
 export const getDetail = async (
   id: string,
-  type: Type
+  type: TypeReview
 ): Promise<TypeModels> => {
   const res = await axios.get(`${baseUrl}/d/${type}/${id}`)
   return res.data.data

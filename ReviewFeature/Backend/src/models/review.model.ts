@@ -1,6 +1,6 @@
 import { DataTypes, Model, Optional, Sequelize } from 'sequelize'
 import config from '../config/configData'
-import User from './users.model'
+import User from './Users.model'
 
 interface ReviewAttributes {
   id: string

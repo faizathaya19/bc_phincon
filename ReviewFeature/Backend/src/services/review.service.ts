@@ -3,7 +3,7 @@ import Course from '../models/Course.model'
 import TryoutSection from '../models/tryoutSection.model'
 import App from '../models/App.model'
 import Review from '../models/review.model'
-import User from '../models/users.model'
+import User from '../models/Users.model'
 import { v2 as cloudinary } from 'cloudinary'
 import fs from 'fs/promises'
 

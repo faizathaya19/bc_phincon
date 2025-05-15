@@ -1,0 +1,1 @@
+export type TypeReview = 'course' | 'tryout-section' | 'app'
