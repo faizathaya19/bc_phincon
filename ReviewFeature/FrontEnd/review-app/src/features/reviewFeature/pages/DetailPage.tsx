@@ -6,10 +6,12 @@ import type { Tryout } from '../types/Tryout'
 import type { App } from '../types/App'
 import CreateReviewForm from '../components/CreateReviewForm'
 import ReviewFilter from '../components/ReviewFilter'
+import { useProfile } from '../../loginFeature/contexts/ProfileContext'
 
 type DetailType = Course | Tryout | App
 
 const DetailPage: React.FC = () => {
+  const { profile } = useProfile()
   const { type, id } = useParams<{
     type: 'course' | 'tryout-section' | 'app'
     id: string
@@ -202,7 +204,7 @@ const DetailPage: React.FC = () => {
       {renderCommonData()}
 
       <CreateReviewForm
-        userId="917bbec2-c46b-4fd6-b38e-ccfcfc2510be"
+        userId={profile?.id ?? ''}
         referenceId={data.id}
         type={type as 'course' | 'tryout-section' | 'app'}
         onSuccess={fetchData}

@@ -1,22 +1,20 @@
-import app from './app'
 import config from './config/configData'
 import { v2 as cloudinary } from 'cloudinary'
 import { setupAssociations } from './models/associations'
-
-const association = () => {
-  setupAssociations()
-}
+import { httpServer } from './utils/socket'
 
 const startServer = async () => {
   try {
     await config.database.authenticate()
-    association()
+    console.log('✅ Database connected')
+
+    setupAssociations()
     cloudinary.config(config.cloudinary)
-    app.listen(config.port, () => {
-      console.log(`Server running on port ${config.port}`)
+    httpServer.listen(config.port, () => {
+      console.log(`🚀 Server listening on port ${config.port}`)
     })
   } catch (err) {
-    console.error('Unable to connect to the database:', err)
+    console.error('❌ Unable to connect to the database:', err)
   }
 }
 
